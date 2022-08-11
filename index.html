@@ -39,56 +39,56 @@
       <div style="display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start;">
         <div>
 
-  
+
           <div class="container">
-  
+
             <div class="zum">
-  
+
               <label style="cursor:pointer;"><input
                   style="position:absolute; width:17vw; top:10%; left:7%; cursor: poitner;" type="range" id="slider"
                   name="slider" min="0" max="2" step="0.05" value="1"
                   onchange="document.getElementById('outvol').value=value">
                 <p style="color:white; font-size:2vw; position: absolute; left:2%; top:10%">zoom:</p>
-    
-                <output style="position:absolute; font-size:2vw; color:white; top:55%; left:29%;" id="outvol" name="outvol"
-                  for="vol">1</output%>
+
+                <output style="position:absolute; font-size:2vw; color:white; top:55%; left:29%;" id="outvol"
+                  name="outvol" for="vol">1</output%>
               </label>
-    
+
             </div>
 
             <img style="width:75vw; height: 45vw;" src="https://www.offidocs.com/images/starnightskymilkywaystarry.jpg"
               alt="cielo estrellado">
-  
+
             <div id="pazoom">
               <div class="sol">
               </div>
-  
+
               <div class="orbitSa">
                 <img src="saturno.png" onclick="handleClick('Saturno', 'orange')" class="planeta saturno">
               </div>
-  
+
               <div class="orbitJu">
                 <img src="jupiter.png" onclick="handleClick('Júpiter', 'orange')" class="planeta jupiter">
               </div>
-  
+
               <div class="orbitMa">
                 <img src="mars.png" onclick="handleClick('Marte', '#f64219')" class="planeta marte">
               </div>
-  
+
               <div class="orbitTi">
                 <img src="tierra.png" onclick="handleClick('Tierra', '#63b5fa')" class="planeta tierra">
               </div>
-  
+
               <div class="orbitVe">
                 <img src="venus.png" onclick="handleClick('Venus', '#f6bb6a')" class="planeta venus">
               </div>
-  
+
               <div class="orbitMe">
                 <img src="mercurio.png" onclick="handleClick('Mercurio', '#707070')" class="planeta mercurio">
               </div>
             </div>
-  
-  
+
+
           </div>
         </div>
 
@@ -133,6 +133,7 @@
           <div id="subdisplay">seleccione el punto de partida</div>
         </div>
 
+        <button id="swap">&#8593&#8595</button>
 
         <label style="margin-top: 2rem;">
           <div style="display: flex;">
