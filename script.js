@@ -64,7 +64,7 @@ function calcular() {
   var sub2 = document.getElementById("subdisplay2");
   var ac = ", aerocaptura posible";
 
-  if (dive.style.display == "none") {
+  if (!dive.style.display || dive.style.display == "none") {
     if (eo.innerHTML == "Marte" && ed.innerHTML == "Tierra") {
       resultado.innerHTML = d + "2,1 km/s";
     } else if (eo.innerHTML == "Tierra" && ed.innerHTML == "Marte") {
