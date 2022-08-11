@@ -10,21 +10,17 @@ body {
 }
 
 .zum {
-  position: relative;
+  position: absolute;
   width: 21vw;
   height: 5vw;
   border: 3px solid white;
-  margin: 2vw 0 0 0;
   background: grey;
   z-index: 1;
   border-radius: 0 0 15%/60% 0;
 }
 
 .container {
-  margin-top: -5.6vw;
-  margin-bottom: 11vw;
   position: relative;
-  float: left;
   border: 5px solid white;
   width: 68vw;
   height: 45vw;
@@ -72,34 +68,26 @@ body {
 }
 
 #panel {
-  position: relative;
-  margin-top: -5.6vw;
   background-color: grey;
-  float: left;
+  /* float: left; */
   border: 5px solid yellow;
-  width: 25vw;
-  height: 67vw;
+  padding: 1rem 3rem;
 }
 
 #results {
-  position: absolute;
-  width: 62vw;
   height: 10vw;
   border: 4px solid #876123;
   background: lightgrey;
-  top: 73%;
-  left: -265%;
+  padding: 1rem;
   overflow: visible;
 }
 
 .display {
-  position: absolute;
+  position: relative;
   width: 21vw;
   height: 6vw;
   background: white;
   border: 2px solid black;
-  margin-top: 1vh;
-  left: 5%;
   cursor: pointer;
 }
 
@@ -111,11 +99,9 @@ body {
   height: 16vw;
   background: url(milky.jpg);
   border: 2px solid orange;
-  left: 5%;
-  top: 12%;
-  bottom: 10%;
   display: none;
-
+  margin-top: 2rem;
+  overflow: hidden;
 }
 
 
@@ -125,11 +111,8 @@ body {
   height: 16vw;
   background: url(milky.jpg);
   border: 2px solid orange;
-  left: 5%;
-  top: 12%;
-  bottom: 10%;
+  margin-top: 2rem;
   display: none;
-
 }
 
 #swap {
@@ -213,6 +196,7 @@ body {
 }
 
 #subdisplay {
+  z-index: 99;
   position: absolute;
   width: 20vw;
   height: 2vw;
@@ -239,22 +223,22 @@ body {
 }
 
 
-button {
+.calcular {
   font-size: 3vw;
-  position: absolute;
-  margin: 9vw 0 0 6vw;
+  margin: 2vw 0;
   cursor: pointer;
 }
 
 .config {
+  cursor: pointer;
   position: absolute;
+  bottom: 0;
+  right: 0;
   width: 3.5vw;
   height: 2vw;
   font-size: 0.7vw;
   text-align: center;
   padding: 0vw 3vw 1vw 0;
-  top: -83%;
-  right: 0%;
 }
 
 .orbitMe {

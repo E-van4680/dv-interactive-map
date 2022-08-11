@@ -2,16 +2,15 @@ var dive = document.getElementById("subselector");
 var dive2 = document.getElementById("subselector2");
 
 function config(id) {
-  if (dive.style.display == "none" && dive2.style.display == "none") {
+  if (
+    !dive.style.display ||
+    (dive.style.display == "none" && dive2.style.display == "none")
+  ) {
     dive.style.display = "block";
     dive2.style.display = "block";
-    document.getElementById("destino").style.margin = "3% 0 0 5%";
-    document.getElementById("swap").style.top = "33%";
   } else {
     dive.style.display = "none";
     dive2.style.display = "none";
-    document.getElementById("destino").style.margin = "38% 0 0 5%";
-    document.getElementById("swap").style.top = "8.5%";
   }
 }
 
