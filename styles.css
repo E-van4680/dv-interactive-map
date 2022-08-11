@@ -1,0 +1,441 @@
+body {
+        background-color: #000;
+}
+
+.logo {
+        width: 11vw;
+        position:fixed;
+        top: 0vh;
+        left: 89%;
+}
+
+.zum {
+	position: relative;
+	width: 21vw;
+	height: 5vw;
+	border: 3px solid white;
+	margin: 2vw 0 0 0;
+	background: grey;
+	z-index:1;
+	border-radius: 0 0 15%/60% 0;
+}
+
+.container {
+        margin-top: -5.6vw;
+        margin-bottom: 11vw;
+        position: relative;
+        float: left;
+        border: 5px solid white;
+        width: 68vw;
+        height: 45vw;
+	overflow: hidden;
+}
+
+#pazoom {
+	width: 100%;
+	height: 100%;
+	border: 5px solid pink;
+	zoom: 1;
+}
+
+
+
+.sol {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 6vw;
+        height: 6vw;
+        background: orange;
+        border-radius: 50%;
+        margin: -3vw 0 0 -3vw;
+        box-shadow: 0vw 0vw 1.7vw 0.3vw yellow;
+}
+
+.info {
+        width: 80%;
+        height: 30vw;
+        border: 3px solid lightgreen;
+        padding: 2vw;
+        background: #2a2a2a;
+} 
+
+#extra {
+        float: left;
+        position: relative;
+        margin-top: 4vw;
+        width:80%;
+        height:37vw;
+        border: 3px solid lightblue;
+        padding: 2vw;
+        background: #2a2a2a;
+}
+
+#panel {
+        position: relative;
+        margin-top: -5.6vw;
+        background-color: grey;
+        float: left;
+        border: 5px solid yellow;
+        width: 25vw;
+        height: 67vw;
+}
+
+#results {
+        position: absolute;
+        width: 62vw;
+        height: 10vw;
+        border: 4px solid #876123;
+        background: lightgrey;
+        top: 73%;
+        left: -265%;
+	overflow: visible;
+}
+
+.display {
+        position: absolute;
+        width: 21vw;
+        height: 6vw;
+        background: white;
+        border: 2px solid black;
+        margin-top: 1vh;
+        left: 5%;
+        cursor: pointer;
+}
+
+
+
+#subselector {
+        position: relative;
+        width: 21vw;
+        height: 16vw;
+        background: url(milky.jpg);
+        border: 2px solid orange;
+        left: 5%;
+        top: 12%;
+        bottom: 10%;
+        display: none;
+
+}
+
+
+#subselector2 {
+        position: relative;
+        width: 21vw;
+        height: 16vw;
+        background: url(milky.jpg);
+        border: 2px solid orange;
+        left: 5%;
+        top: 12%;
+        bottom: 10%;
+        display: none;
+
+}
+
+#swap {
+	position: absolute;
+	right: 3%;
+	top: 5.5vw;
+	font-size: 2vw;
+	border: 2px solid green;
+
+}
+
+#tierra2 {
+        margin-top: 6vw;
+        margin-left: 9vw;
+        position: absolute;
+        width: 3vw;
+        height: 3vw;
+        border: 2px solid rgba(0,0,0,0.1);
+        border-radius: 50%;
+        background: white;
+        cursor: pointer;
+}
+
+
+#tierra3 {
+        margin-top: 6vw;
+        margin-left: 9vw;
+        position: absolute;
+        width: 3vw;
+        height: 3vw;
+        border: 2px solid rgba(0,0,0,0.1);
+        border-radius: 50%;
+        background: white;
+        cursor: pointer;
+}
+
+
+
+.LEO {
+        position: absolute;
+        width: 5vw;
+        height: 5vw;
+        margin-top: 5vw;
+        margin-left: 8vw;
+        border-radius: 50%;
+        border: 2px dotted white;
+        cursor: pointer;
+         
+}
+
+.capesc {
+        position: absolute;
+        margin: 4vw 0 0 8vw;
+        width: 11vw;
+        height: 7vw;
+        border: 2px dotted white;
+        border-radius: 50%;
+        cursor: pointer;
+}
+
+.flyby {
+        position: absolute;
+        width: 6vw; 
+        height: 17vw; 
+        margin: -1.4vw 0 0 8vw;
+        border: 2px dotted white;
+        border-color: transparent transparent transparent white;
+        border-radius: 70% 0 0 70%;
+        cursor: pointer;
+
+}
+
+.SOI {
+        position: absolute;
+        margin: -0.7vw 0 0 1.5vw;
+        width: 18vw;
+        height: 18vw;
+        border-radius: 50%;
+        background: grey;
+        opacity: 0.4;
+}
+
+#subdisplay {
+        position: absolute;
+        width: 20vw;
+        height: 2vw;
+        border: 2px solid orange;
+        background: white;
+        left: -2px;
+        bottom: -2px;
+        text-align: center;
+        font-size: 1.5vw;
+        padding: 0.5vw;
+}
+
+#subdisplay2 {
+        position: absolute;
+        width: 20vw;
+        height: 2vw;
+        border: 2px solid orange;
+        background: white;
+        left: -2px;
+        bottom: -2px;
+        text-align: center;
+        font-size: 1.5vw;
+        padding: 0.5vw
+}
+
+
+button {
+        font-size: 3vw;
+        position: absolute;
+        margin: 9vw 0 0 6vw;
+        cursor: pointer;
+}
+
+.config {
+        position: absolute;
+        width: 3.5vw;
+        height: 2vw;
+        font-size: 0.7vw;
+        text-align: center;
+        padding: 0vw 3vw 1vw 0;
+        top:-83%;
+        right: 0%;
+}
+
+.orbitMe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 11vw;
+        height: 11vw;
+        border: 2px solid #a7a6a6;
+        border-radius: 50%;
+        margin: -5.6vw 0 0 -5.7vw;
+        animation: rotate 20s linear infinite;
+}
+
+
+
+.mercurio {
+        width: 2vw;
+        top: 50%;
+        left: 50%;
+        height: 2vw;
+        background: #707070;
+        border-radius: 50%;
+        cursor: pointer;
+        margin: -0.2vw 0 0 7.3vw;
+	animation: rotar 20s linear infinite;
+}
+
+.orbitVe {
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        width: 18vw;
+        height: 18vw;
+        border: 2px solid #fdf6dc;
+        border-radius: 50%;
+        margin: -9vw 0 0 -9vw;
+        animation: rotate 51s linear infinite;
+}
+
+.venus {
+        top: 50%;
+        left: 50%;
+        width: 3.2vw;
+        height: 3.3vw;
+        border-radius: 50%;
+        margin: -1.6vw 0 0 5vw;
+        cursor: pointer;
+	animation: rotar 82s linear infinite;
+}
+
+.orbitTi {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 26.2vw;
+        height: 26.2vw;
+        border: 2px solid #c4f8f8;
+        border-radius: 50%;
+        margin: -13.1vw 0 0 -13.1vw;
+        animation: rotate 82s linear infinite;
+}
+
+.tierra {
+        top: 50%;
+        left: 50%;
+        width: 3.1vw;
+        height: 3.1vw;
+        border-radius: 50%;
+        margin: -1.5vw 0 0 11.7vw;
+        cursor: pointer;
+	animation: rotar 82s linear infinite;
+}
+
+.orbitMa {
+        animation: rotate 154s linear infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 38vw;
+        height: 38vw;
+        border: 2px solid #ffc7c7;
+        border-radius: 50%;
+        margin: -19vw 0 0 -19vw;
+}
+
+.marte {
+        top: 50%;
+        left: 50%;
+        width: 2.9vw;
+        height: 2.9vw;
+        border-radius: 50%;
+        margin: -1.5vw 0 0 19vw;
+        cursor: pointer;
+	animation: rotar 154s linear infinite;
+}
+
+.orbitJu {
+	animation: rotate 970s linear infinite;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 58vw;
+	height: 58vw;
+	border: 2px solid #f3de86;
+	border-radius:50%;
+	margin: -29vw 0 0 -29vw;
+}
+
+.jupiter {
+	top: 50%;
+	left: 50%;
+	width: 5.5vw;
+	height: 5.5vw;
+	border-radius: 50%;
+	margin: -2.8vw 0 0 29vw;
+	animation: rotar 970s linear infinite;
+	cursor: pointer;
+}
+
+.orbitSa {
+	animation: rotate 2376s linear infinite;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 80vw;
+	height: 80vw;
+	border: 2px solid #efeea1;
+	border-radius:50%;
+	margin: -40vw 0 0 -40vw;
+}
+
+.saturno {
+	top: 50%;
+	left: 50%;
+	width: 6.5vw;
+	height: 4.3vw;
+	margin: -1vw 0 0 29vw;
+	animation: rotar 2375s linear infinite;
+	cursor: pointer;
+}
+
+
+@keyframes rotar {
+	100%{transform: rotate(-360deg);}
+}
+
+@keyframes rotate {
+        100%{transform: rotate(360deg);} 
+}
+
+.planeta:hover {
+	filter: brightness(100) ;
+}
+
+.sub:hover {
+        border: 2px solid white;
+}
+
+#tierra2:hover {
+        border: 2px solid white;
+}
+
+#tierra3:hover {
+        border: 2px solid white;
+}
+
+.config:hover span{
+        display: none;
+}
+
+.config:hover{
+        animation: scale 0.05s linear forwards;
+}
+
+.flyby:hover {
+        border: 2px solid;
+        border-color: transparent transparent transparent white;
+}
+
+@keyframes scale {
+        100%{transform: scale(2,1.5);}
+}
+

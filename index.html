@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>dv interactive map</title><meta charset="UTF-8">
+        <link href="styles.css" rel="stylesheet">
+<body>
+        <header class="header">
+                <h1 style= "color: white; font-size:5vw;" >Mapa interactivo de <i>Δv</i></h1>
+        </header>
+                <h2 style= "color: white; font-size:2vw">v0.4</h2>
+        
+        <div class="info"><h2 style="color:white; position:relative; margin-top: 0.5vw; font-size:2.6vw;"> Información necesaria: </h2>
+
+        <ul style="position: relative; margin-top: 0,3vw; font-size:1.8vw;">
+                <li style="color: white;">Con la configuración por defecto, el punto de partida va a ser una órbita baja del planeta que se eligió como origen, y el objetivo va a ser flyby del planeta que se eligió como destino. No se incluye la desaceleracion necesaria para capturar.</li><br>
+                <li style="color:white;">Los resultados son aproximados, no se están teniendo en cuenta factores como la inclinación o excentricidad de las orbitas.</li> <br>
+                <li style="color: white;">Por ahora solo se calculan viajes que partan de o arriben a la Tierra.</li> <br>
+                <li style="color: white;"><span style="color: red;">Nuevo!</span> Con la configuración avanzada activada, además de los planetas de origen y destino puedes elegir con más precisión el punto de partida y de llegada.</li><br> 
+        </ul>
+        </div>
+
+
+
+        <img class="logo" src="logo.jpg"> 
+
+
+	<div class="zum">
+
+		<label style="cursor:pointer;"><input style="position:absolute; width:17vw; top:10%; left:7%; cursor: poitner;" type="range" id="slider" name="slider" min="0" max="2" step="0.05" value="1" onchange="document.getElementById('outvol').value=value"><p style="color:white; font-size:2vw; position: absolute; left:2%; top:10%">zoom:</p>
+
+		<output style="position:absolute; font-size:2vw; color:white; top:55%; left:29%;" id="outvol" name="outvol" for="vol">1</output%>
+		</label>
+	
+	</div>
+
+
+	<div class="container">
+
+                <img style="width:75vw; height: 45vw;" src="https://www.offidocs.com/images/starnightskymilkywaystarry.jpg" alt="cielo estrellado">
+
+		<div id="pazoom">
+			<div class="sol">
+			</div>
+			
+			<div class="orbitSa">
+				<img src="saturno.png" onclick="handleClick('Saturno', 'orange')" class="planeta saturno">
+			</div>
+
+			<div class="orbitJu">
+				<img src="jupiter.png" onclick="handleClick('Júpiter', 'orange')" class="planeta jupiter">
+			</div>
+
+			<div class="orbitMa">
+				<img src="mars.png" onclick="handleClick('Marte', '#f64219')" class="planeta marte">
+			</div>
+
+			<div class="orbitTi">
+				<img src="tierra.png" onclick="handleClick('Tierra', '#63b5fa')" class="planeta tierra">
+			</div>
+
+			<div class="orbitVe">
+				<img src="venus.png" onclick="handleClick('Venus', '#f6bb6a')" class="planeta venus">
+			</div>
+		 
+			<div class="orbitMe">
+				<img src="mercurio.png" onclick="handleClick('Mercurio', '#707070')" class="planeta mercurio">
+			</div>
+	    	</div>
+                              
+
+        </div>
+
+
+        
+        <div id="panel">
+
+                <div id="results">
+                         <h2 style="margin:0 0 0 1vw; font-size:3vw"><i>dv</i> necesario:</h2>
+                        <p id="resultado" style="position:absolute; margin: 0 0 0 1vw; font-size: 2vw;"> -</p>
+                </div>
+
+                <label><input type="radio" id="origen" checked name="origen-destino" style= "margin:9% 0 0 5%; cursor:pointer;"><h2 style="margin: -3.3vh 0 0 3.5vw; cursor: pointer; font-size:200%; ">Origen</h2>
+
+                <div class="display">
+                        <p id="enter-origen" style="text-align: center; margin-top: 0.2vh; font-size: 2vw;">seleccione el planeta de origen</p>
+                        <button onclick="config('subselector');" class="config">config avanzada</button>
+                </div>
+                </label>
+
+
+                <div id="subselector">
+                        <div class="SOI"></div>
+                        <div onclick="sub('Órbita de escape/captura')" class="sub capesc"></div>
+                        <div onclick="sub('Órbita baja')" class="sub LEO"></div>
+                        <div onclick="sub('Superficie')" id="tierra2"></div>
+                        <div id="subdisplay">seleccione el punto de partida</div>
+                </div>
+
+		<button id="swap">&#8593&#8595</button>
+
+		<label><input type="radio" id="destino" name="origen-destino" style= "position: absolute; margin: 38% 0 0 5%; cursor: pointer;"><h2 style="margin: 35% 0 0 3.5vw; cursor: pointer; font-size: 200%;">Destino</h2>
+
+                <div class="display">
+                        <p id="enter-destino" style="text-align: center; margin-top: 0.2vh; font-size: 2vw;">seleccione el planeta de destino</p>
+                        <button onclick="config('subselector2');" class="config">config avanzada</button>
+                </div>
+                </label>
+
+
+                <div id="subselector2">
+                        <div class="SOI"></div>
+                        <div onclick="sub2('Flyby/Sobrevuelo')" class="flyby"></div>
+                        <div onclick="sub2('Órbita de escape/captura')" class="sub capesc"></div>
+                        <div onclick="sub2('Órbita baja')" class="sub LEO"></div>
+                        <div onclick="sub2('Superficie')" id="tierra3"></div>
+                        <div id="subdisplay2">seleccione el destino</div>
+                </div>
+
+
+                <button id="button" onclick= "calcular()">Calcular</button>
+                <a style="position: absolute; top: 0.6vw; right: 1vw; font-size: 1.3vw;" href="#extra">Perdido?
+                        <img style="width:2vw; position: absolute; bottom: -0.3vw; left: -2.9vw;" src="https://www.pngmart.com/files/15/Floating-Astronaut-PNG-Picture.png">
+                </a> 
+
+
+
+        </div>
+
+        <div id=extra>
+                <h2 style="color:white; position:relative; margin-top: 0.5vw; font-size:2.6vw;">Maniobras orbitales (próximamente con ilustraciones)</h2>
+
+                <ul style="position: relative; margin-top: 1vw; font-size:1.8vw;">
+                <li style="color: white;">Cuando estamos en el espacio y queremos ir de un punto A a un punto B lo que tenemos que hacer es cambiar nuestra velocidad, ya sea relativa al al cuerpo que estamos orbitando o a otro cuerpo que orbitan ambos. Este cambio de velocidad se llama Δv</li><br>
+                <li style="color: white;">Cuando aumentamos nuestra velocidad el tamaño de nuestra órbita se hace más grande, y cuando disminuimos nuestra velocidad, este tamaño disminuye.</li><br>
+                <li style="color: white;">Si queremos irnos de un planeta, siempre hay que hacer las maniobras aumentando la velocidad en el contexto de la propia óribita, pero para ir a un planeta alejándose del Sol se deberá acelerar progrado relativo a la estrella mientras que para ir a un planeta que está más cerca del Sol se deberá acelerar retrógrado relativo a esta.</li><br>
+                <li style="color:white;">Para capturar en un planta (o sea quedarse en órbita de este y no seguir de largo), a medida que nos acercamos a este hay que posicionarse de manera retrograda con respecto al planeta que arribamos y al llegar al periapsis acelerar la cantidad indicada.</li><br>
+                <br><br>
+                </ul>
+        </div>
+
+
+        <script src="script.js"></script>
+</body>
+</html>
+
