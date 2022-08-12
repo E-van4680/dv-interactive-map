@@ -2,11 +2,14 @@ body {
   background-color: #000;
 }
 
+
 .logo {
+  position: absolute;
   width: 11vw;
-  position: fixed;
+  display: flex;
   top: 0vh;
   left: 89%;
+  border: 2px solid grey;
 }
 
 .zum {
@@ -17,6 +20,7 @@ body {
   background: grey;
   z-index: 1;
   border-radius: 0 0 15%/60% 0;
+  cursor: pointer;
 }
 
 .container {
@@ -69,9 +73,8 @@ body {
 
 #panel {
   background-color: grey;
-  /* float: left; */
   border: 5px solid yellow;
-  padding: 1rem 3rem;
+  padding: 1rem 1rem;
 }
 
 #results {
@@ -116,9 +119,15 @@ body {
 }
 
 #swap {
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 2vw;
   border: 2px solid green;
+  cursor: pointer;
+}
+
+#swap:hover {
+	background: #444;
+	color: white;
 }
 
 #tierra2 {

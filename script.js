@@ -22,6 +22,7 @@ function handleClick(planeta, color) {
     document.getElementById("enter-destino").innerHTML = planeta;
     document.getElementById("tierra3").style.background = color;
   }
+    document.getElementById("destino").checked = true;
 }
 
 function sub(partida) {
